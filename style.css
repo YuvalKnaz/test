@@ -21,11 +21,21 @@
         border-color: rgb(146, 30, 53);
      }      
     button{
-        margin:8px;
-        height: 80px;
-        width: 100px;
+        margin: 1%;
+        height:7em;
+        width:15em;
+        
     }
     #goBack{
         height: 20px;
         width: 80px;
+    }
+
+    p{
+       text-align: justify;
+       margin: 3%;
+       padding: 2%;
+    }
+    #Won{
+        visibility: hidden;
     }

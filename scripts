@@ -11,7 +11,7 @@ function changeShape(button) {
             showWinner();
         } else if (howManyButtons == 9) {
             won('draw')
-            ResetGame(true);
+            
         }
 
     } else if (player.innerText == 'Player 2 (O)' && name.innerText == '---') {
@@ -23,13 +23,14 @@ function changeShape(button) {
             showWinner();
         } else if (howManyButtons == 9) {
             won('draw')
-            ResetGame(true);
+    
         } 
     }
     changePlayer();  
 }
 
 function ResetGame(someWin) {
+    Won.style.visibility="hidden"
     howManyButtons = 0;
     button1.innerText = '---'; button1.style.color = "black";
     button2.innerText = '---'; button2.style.color = "black";
@@ -85,7 +86,7 @@ function showWinner() {
         document.getElementById("p2score").innerText = p2score;
         someWin = true;
     }
-    ResetGame(someWin);
+    
 }
 
 function changePlayer() {
@@ -96,15 +97,20 @@ function changePlayer() {
 }
 
 function won(p){
-    if ((Won.innerText=='empty' || Won.innerText=='player 1 won the game!' || Won.innerText=='player 2 won the game!'||Won.innerText=='its a draw!') && p=='player1'){
+    if ( p=='player1'){
         Won.innerText='player 1 won the game!'
-        setTimeout()/////////////////////////
+        Won.style.visibility="visible"
+        setTimeout(()=>ResetGame(true),3000)
     }
-    else if((Won.innerText=='empty' || Won.innerText=='player 1 won the game!' || Won.innerText=='player 2 won the game!'||Won.innerText=='its a draw!') && p=='player2'){
+    else if(p=='player2'){
         Won.innerText='player 2 won the game!'
+        Won.style.visibility="visible"
+        setTimeout(()=>ResetGame(true),3000)
     }
-    else if((Won.innerText=='empty' || Won.innerText=='player 1 won the game!' || Won.innerText=='player 2 won the game!'||Won.innerText=='its a draw!') && p=='draw'){
+    else if(p=='draw'){
         Won.innerText='its a draw!'
+        Won.style.visibility="visible"
+        setTimeout(()=>ResetGame(true),3000)
     }
 
 
