@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head id="XOhead">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <script src="scripts"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body class="bodys">
+    <center><h1 class="Font">Game</h1></center>
+    <hr>
+    <center><h1 id="Won" class="Font">empty</h1></center>
+    <button style="float:right" id="goBack"><a href="Front.html">go back</a></button>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <center>
+    <button onclick="changeShape(this)"><span id="button1" class="buttons">---</span></button><button  onclick="changeShape(this)"><span id="button2" class="buttons">---</span></button><button  onclick="changeShape(this)"><span id="button3" class="buttons">---</span></button>
+    <br><button onclick="changeShape(this)"><span id="button4"class="buttons">---</span></button><button  onclick="changeShape(this)"><span id="button5" class="buttons">---</span></button><button  onclick="changeShape(this)"><span id="button6" class="buttons">---</span></button>
+    <br><button  onclick="changeShape(this)"><span id="button7"class="buttons">---</span></button><button onclick="changeShape(this)"><span id="button8" class="buttons">---</span></button><button  onclick="changeShape(this)"><span id="button9" class="buttons">---</span></button>
+    <br><br><span id="player">Player 1 (X)</span>
+    <br>
+    <br><span class="Font"> Player 1 wins: </span><span id ="p1score" span class="Font">0</span> 
+    <br><span class="Font">Player 2 wins:</span> <span id ="p2score" span class="Font">0</span>
+    <br>
+    <br>
+    <br>
+    <br><button style="width: 150px; height: 50px;" onclick="ResetGame()"><span id="ResetBut">Restart</span>
+    </center>
+
+    
+</body>
+</html>

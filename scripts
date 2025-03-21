@@ -1,0 +1,112 @@
+let howManyButtons = 0;
+
+function changeShape(button) {
+    let name = button.querySelector("span");
+    if (player.innerText == 'Player 1 (X)' && name.innerText == '---') {
+        name.innerText = 'X';
+        name.style.color = "red";
+        howManyButtons++;
+        if (win()) {
+            won('player1')
+            showWinner();
+        } else if (howManyButtons == 9) {
+            won('draw')
+            ResetGame(true);
+        }
+
+    } else if (player.innerText == 'Player 2 (O)' && name.innerText == '---') {
+        name.innerText = 'O';
+        name.style.color = "blue";
+        howManyButtons++;
+        if (win()) {
+            won('player2')
+            showWinner();
+        } else if (howManyButtons == 9) {
+            won('draw')
+            ResetGame(true);
+        } 
+    }
+    changePlayer();  
+}
+
+function ResetGame(someWin) {
+    howManyButtons = 0;
+    button1.innerText = '---'; button1.style.color = "black";
+    button2.innerText = '---'; button2.style.color = "black";
+    button3.innerText = '---'; button3.style.color = "black";
+    button4.innerText = '---'; button4.style.color = "black";
+    button5.innerText = '---'; button5.style.color = "black";
+    button6.innerText = '---'; button6.style.color = "black";
+    button7.innerText = '---'; button7.style.color = "black";
+    button8.innerText = '---'; button8.style.color = "black";
+    button9.innerText = '---'; button9.style.color = "black";
+    if (someWin) {
+        someWin = false;
+        return;
+    } else {
+        p1score = 0;
+        p2score = 0;
+        document.getElementById("p1score").innerText = p1score;
+        document.getElementById("p2score").innerText = p2score;
+    }
+}
+
+function win() {
+    if (button1.innerText != '---' && button1.innerText == button2.innerText && button2.innerText == button3.innerText)
+        return true;
+    else if (button4.innerText != '---' && button4.innerText == button5.innerText && button5.innerText == button6.innerText)
+        return true;
+    else if (button7.innerText != '---' && button7.innerText == button8.innerText && button8.innerText == button9.innerText)
+        return true;
+    else if (button1.innerText != '---' && button1.innerText == button4.innerText && button4.innerText == button7.innerText)
+        return true;
+    else if (button2.innerText != '---' && button2.innerText == button5.innerText && button5.innerText == button8.innerText)
+        return true;
+    else if (button3.innerText != '---' && button3.innerText == button6.innerText && button6.innerText == button9.innerText)
+        return true;
+    else if (button1.innerText != '---' && button1.innerText == button5.innerText && button5.innerText == button9.innerText)
+        return true;
+    else if (button3.innerText != '---' && button3.innerText == button5.innerText && button5.innerText == button7.innerText)
+        return true;
+    return false;
+}
+
+let p1score = 0;
+let p2score = 0;
+let someWin = false;
+
+function showWinner() {
+    if (player.innerText == 'Player 1 (X)') {
+        p1score++;
+        document.getElementById("p1score").innerText = p1score;
+        someWin = true;
+    } else if (player.innerText == 'Player 2 (O)') {
+        p2score++;
+        document.getElementById("p2score").innerText = p2score;
+        someWin = true;
+    }
+    ResetGame(someWin);
+}
+
+function changePlayer() {
+    if (player.innerText == 'Player 1 (X)')
+        player.innerText = 'Player 2 (O)';
+    else
+        player.innerText = 'Player 1 (X)';
+}
+
+function won(p){
+    if ((Won.innerText=='empty' || Won.innerText=='player 1 won the game!' || Won.innerText=='player 2 won the game!'||Won.innerText=='its a draw!') && p=='player1'){
+        Won.innerText='player 1 won the game!'
+        setTimeout()/////////////////////////
+    }
+    else if((Won.innerText=='empty' || Won.innerText=='player 1 won the game!' || Won.innerText=='player 2 won the game!'||Won.innerText=='its a draw!') && p=='player2'){
+        Won.innerText='player 2 won the game!'
+    }
+    else if((Won.innerText=='empty' || Won.innerText=='player 1 won the game!' || Won.innerText=='player 2 won the game!'||Won.innerText=='its a draw!') && p=='draw'){
+        Won.innerText='its a draw!'
+    }
+
+
+
+}
