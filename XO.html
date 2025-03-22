@@ -25,15 +25,26 @@
     <button onclick="changeShape(this)"><span id="button1" class="buttons">---</span></button><button  onclick="changeShape(this)"><span id="button2" class="buttons">---</span></button><button  onclick="changeShape(this)"><span id="button3" class="buttons">---</span></button>
     <br><button onclick="changeShape(this)"><span id="button4"class="buttons">---</span></button><button  onclick="changeShape(this)"><span id="button5" class="buttons">---</span></button><button  onclick="changeShape(this)"><span id="button6" class="buttons">---</span></button>
     <br><button  onclick="changeShape(this)"><span id="button7"class="buttons">---</span></button><button onclick="changeShape(this)"><span id="button8" class="buttons">---</span></button><button  onclick="changeShape(this)"><span id="button9" class="buttons">---</span></button>
-    <br><br><span id="player">Player 1 (X)</span>
-    <br>
+    <br><br><br><br><span id="player">Player 1 (X)</span>
+    <br><br><br>
     <br><span class="Font"> Player 1 wins: </span><span id ="p1score" span class="Font">0</span> 
     <br><span class="Font">Player 2 wins:</span> <span id ="p2score" span class="Font">0</span>
-    <br>
-    <br>
-    <br>
-    <br><button style="width: 150px; height: 50px;" onclick="ResetGame(true)"><span id="ResetBut">Restart</span>
-    </center>
+
+    <div class="imageContainer">
+        <p>Player 1</p>
+        <img src="photos/mark0.png" alt="mark0" id="dynamicImageP1" class="dynamicImages">
+        <img src="photos/mark0.png" alt="mark0" id="dynamicImageP12" class="dynamicImages" style="visibility: hidden">
+    </div>
+    <div class="imageContainer">
+        <p>Player 2</p>
+        <img src="photos/mark0.png" alt="mark0" id="dynamicImageP2" class="dynamicImages">
+        <img src="photos/mark0.png" alt="mark0" id="dynamicImageP22" class="dynamicImages" style="visibility: hidden">
+    </div>
+    <br><br><br><br>
+    <button style="width: 150px; height: 50px;" onclick="ResetGame(true)"><span id="ResetBut">Restart</span></button>
+
+    
+        </center>
 
     
 </body>

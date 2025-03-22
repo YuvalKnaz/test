@@ -66,6 +66,7 @@ function won(p){
         setTimeout(()=>ResetGame(false),3000)
         p1score++;
         document.getElementById("p1score").innerText = p1score;
+        changeImage1()
     }
     else if(p=='player2'){
         Won.innerText='player 2 won the game!'
@@ -74,6 +75,7 @@ function won(p){
         setTimeout(()=>ResetGame(false),3000)
         p2score++;
         document.getElementById("p2score").innerText = p2score;
+        changeImage2()
     }
     else if(p=='draw'){
         Won.innerText='its a draw!'
@@ -116,3 +118,87 @@ function enableButtons(){
         document.getElementById(`button${i}`).parentElement.disabled = false; // Disable each button
     }
 }
+
+
+function changeImage1() {
+    const img = document.getElementById("dynamicImageP1");
+    if (img.src.includes("photos/mark0.png")) {
+        img.src = "photos/mark1.png"; 
+    }
+    else if (img.src.includes("photos/mark1.png")) {
+        img.src = "photos/mark2.png"; 
+    }
+    else if (img.src.includes("photos/mark2.png")) {
+        img.src = "photos/mark3.png"; 
+    }
+    else if (img.src.includes("photos/mark3.png")) {
+        img.src = "photos/mark4.png"; 
+    }
+    else if (img.src.includes("photos/mark4.png")) {
+        img.src = "photos/mark5.png"; 
+    }
+    else if(img.src.includes("photos/mark5.png")){
+        changeImageR21();
+    }
+}
+function changeImage2() {
+    const img = document.getElementById("dynamicImageP2");
+    if (img.src.includes("photos/mark0.png")) {
+        img.src = "photos/mark1.png"; 
+    }
+    else if (img.src.includes("photos/mark1.png")) {
+        img.src = "photos/mark2.png"; 
+    }
+    else if (img.src.includes("photos/mark2.png")) {
+        img.src = "photos/mark3.png"; 
+    }
+    else if (img.src.includes("photos/mark3.png")) {
+        img.src = "photos/mark4.png"; 
+    }
+    else if (img.src.includes("photos/mark4.png")) {
+        img.src = "photos/mark5.png"; 
+    }
+    else if(img.src.includes("photos/mark5.png")){
+        changeImageR22();
+    }
+}
+
+function changeImageR21(){
+    const img = document.getElementById("dynamicImageP12");
+    img.style.visibility="visible";
+    if (img.src.includes("photos/mark0.png")) {
+        img.src = "photos/mark1.png"; 
+    }
+    else if (img.src.includes("photos/mark1.png")) {
+        img.src = "photos/mark2.png"; 
+    }
+    else if (img.src.includes("photos/mark2.png")) {
+        img.src = "photos/mark3.png"; 
+    }
+    else if (img.src.includes("photos/mark3.png")) {
+        img.src = "photos/mark4.png"; 
+    }
+    else if (img.src.includes("photos/mark4.png")) {
+        img.src = "photos/mark5.png"; 
+    }
+}
+function changeImageR22(){
+    const img = document.getElementById("dynamicImageP22");
+    img.style.visibility="visible";
+    if (img.src.includes("photos/mark0.png")) {
+        img.src = "photos/mark1.png"; 
+    }
+    else if (img.src.includes("photos/mark1.png")) {
+        img.src = "photos/mark2.png"; 
+    }
+    else if (img.src.includes("photos/mark2.png")) {
+        img.src = "photos/mark3.png"; 
+    }
+    else if (img.src.includes("photos/mark3.png")) {
+        img.src = "photos/mark4.png"; 
+    }
+    else if (img.src.includes("photos/mark4.png")) {
+        img.src = "photos/mark5.png"; 
+    }
+}
+
